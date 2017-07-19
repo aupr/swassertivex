@@ -13,20 +13,17 @@ $avdbc = array(
     'PREFIX'=>''
 );
 
+// server address transferred to login page
+$avencryption_sae = new Encryption('adgjmptw');
+
+// target address for login
+$uriForLogin = '/'.APDIR.CADIR.'?app=login&tal='.$avencryption_sae->encrypt($_SERVER['REQUEST_URI']);
+$uriForLogout = '/'.APDIR.CADIR.'?app=logout&tal='.$avencryption_sae->encrypt($_SERVER['REQUEST_URI']);
+
+//echo $uriForLogin;
 
 global $authorized;
 $authorized = 0;
-
-// server address transferred to login page
-$avencryption_sae = new Encryption('adgjmptw');
-echo $_SERVER['REQUEST_URI'];
-function getLogin($obj, $uri) {
-
-}
-
-
-
-
 
 global $avdb;
 $avdb = new EDB($avdbc['DRIVER'], $avdbc['HOSTNAME'], $avdbc['USERNAME'], $avdbc['PASSWORD'], $avdbc['PREFIX'].$avdbc['DATABASE'], $avdbc['PORT']);

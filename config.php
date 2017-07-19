@@ -10,4 +10,4 @@ define('HTTPS_SERVER', 'http://localhost/');
 define('PDIR', 'C:/xampp/htdocs/'); //in cloud '/home/domainName/public_html'
 
 // Application Parent Directory
-define('APDIR', 'w3apps/');
+define('APDIR', 'swassertive/');

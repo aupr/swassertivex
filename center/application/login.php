@@ -86,9 +86,21 @@
 
             $avdb->updateById('user', array('tokens'=>json_encode($toSaveToken), 'credentials'=>json_encode($credentials), 'consents'=>json_encode($consents)), $uuid);
 
-            echo "Login Success!<hr><pre>";
-            var_dump($_SESSION);
-            echo "</pre>";
+            echo "Login Success!<hr>";
+
+            // target application linking
+            if (isset($_GET['tal'])) {
+                $targetLinkAv = $avencryption_sae->decrypt($_GET['tal']);
+                $tal_avad = preg_split('/[\/]+/',$targetLinkAv);
+                if (isset($tal_avad[2])) {
+                    header('Location: '.$targetLinkAv);
+                } else {
+                    header('location: /'.APDIR.CADIR);
+                }
+            } else {
+                header('location: /'.APDIR.CADIR);
+            }
+
         } else {
             echo "Invalid UserID or Password!";
         }

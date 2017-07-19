@@ -3,6 +3,9 @@
 // Application Directory
 define('ADIR', 'center/');
 
+// Assertive center apps directory
+define('CADIR', 'center/');
+
 // Working Directory
 define('DIR_', PDIR.APDIR.ADIR);
 
