@@ -1,10 +1,6 @@
 <?php
 
-$avsession->destroy('STK');
-
-$avcookie->destroy('hsk','/'.APDIR);
-$avcookie->destroy('si','/'.APDIR);
-$avcookie->destroy('trk','/'.APDIR);
+include_once DIR_AUTHORIZATION.'logout.php';
 
 // target application linking
 if (isset($_GET['tal'])) {
