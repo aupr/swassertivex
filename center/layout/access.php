@@ -8,8 +8,10 @@ if ($authorized == 0) {
             header('Location: '.$uriForLogin);
         }
     } elseif (isset($_GET['get'])) {
-        echo "{login: false}";
-        exit;
+        if ($_GET['get']!='login' and $_GET['get']!='logout') {
+            echo '{"login": false, "location":""}';
+            exit;
+        }
     } elseif (isset($_GET['ui'])) {
         echo 'Login required';
         exit;

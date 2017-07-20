@@ -20,7 +20,6 @@ if ($login==2) {
 }
 
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>

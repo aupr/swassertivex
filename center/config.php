@@ -12,6 +12,7 @@ define('DIR_', PDIR.APDIR.ADIR);
 // DIR_RELATIVE_PATH
 define('DIR_APPLICATION', DIR_.'application/');
 define('DIR_AUTHORIZATION', DIR_.'authorization/');
+define('DIR_STUFF', DIR_.'stuff/');
 define('DIR_TRANSFER', DIR_.'transfer/');
 define('DIR_UIM', DIR_.'uim/');
 define('DIR_IMAGE', DIR_.'image/');
